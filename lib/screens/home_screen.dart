@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter_my_favorites/models/shoe.dart';
 import 'package:flutter_my_favorites/provider/shoe_provider.dart';
+import 'package:flutter_my_favorites/screens/my_favorites_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -45,7 +46,13 @@ class HomeScreenState extends State<HomeScreen> {
                 Icons.bookmark,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const MyFavoritesScreen(),
+                  ),
+                );
+              },
             ),
           ),
         ],
